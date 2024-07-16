@@ -1,19 +1,36 @@
 #include<iostream>
+#include<string>
 using namespace std;
+class Player{
+private:
+    int score;//Data Member
+    int health;
+    string name;
+public:
+    void setscore(int s){
+        score=s;
+    } 
+    void sethealth(int h){
+        health=h;
+    }
+    void gethealth(){
+        cout<<health;
+    }
+    void getscore(){
+        cout<<score;
+    }
+    void showHealth(){//Data Function
+        cout<<"Health is: "<<health
+        ;
+    }
+};
 int main(){
-    int arr[]={23,43,1,34,65,12};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    bool flag=true;
-    for(int i=0;i<n;i++){
-        for(int j=i+1;j<=n-1;j++){
-            if(arr[j]<arr[i]){
-                swap(arr[j],arr[i]);
-                flag=false;
-            }
-        }
-        if(flag) break;
-    }
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+    Player amit;
+    // amit.health=200;
+    // amit.name="Hii";
+    // amit.score=100; 
+    // cout<<amit.health<<endl;
+    amit.setscore(200);
+    amit.sethealth(100);
+    amit.showHealth();
 }
